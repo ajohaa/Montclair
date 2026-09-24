@@ -41,3 +41,25 @@ if (carousel) {
   nextBtn.addEventListener("click", () => goTo(index + 1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
 }
+
+// Reveal cards as they scroll into view (spotlight + life-card grids only)
+const revealEls = document.querySelectorAll(".reveal");
+
+if (revealEls.length) {
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  }
+}

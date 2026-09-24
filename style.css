@@ -16,6 +16,8 @@
 
   --rule: 5px;
   --arch: 120px 120px 10px 10px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * { box-sizing: border-box; }
@@ -54,6 +56,27 @@ p { line-height: 1.6; color: #333333; }
   border: none;
   border-top: var(--rule) solid #D1190D;
   margin: 0;
+}
+
+/* =========================================================
+   Scroll reveal (single, restrained treatment)
+   Applied only to the two card grids — everything else
+   stays static so the motion means something when it happens.
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* =========================================================
@@ -100,20 +123,36 @@ p { line-height: 1.6; color: #333333; }
 }
 
 .nav-links a {
+  position: relative;
   font-size: 0.94rem;
   font-weight: 600;
   color: #333333;
   padding: 6px 2px;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: -2px;
+  height: 2px;
+  background: #D1190D;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease);
 }
 
 .nav-links a:hover { color: #D1190D; }
+.nav-links a:hover::after { transform: scaleX(1); }
 
 .nav-links a[aria-current="page"] {
   color: #D1190D;
-  border-bottom-color: #D1190D;
+  border-bottom-color: transparent;
 }
+
+.nav-links a[aria-current="page"]::after { transform: scaleX(1); }
 
 .nav-toggle {
   display: none;
@@ -139,7 +178,7 @@ p { line-height: 1.6; color: #333333; }
     border-bottom: var(--rule) solid #D1190D;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.25s ease;
+    transition: max-height 0.3s var(--ease);
   }
   .nav-links.open { max-height: 320px; }
   .nav-links li { width: 100%; }
@@ -149,10 +188,14 @@ p { line-height: 1.6; color: #333333; }
     padding: 14px 24px;
     border-bottom: 1px solid var(--gray-light);
   }
+  .nav-links a::after { display: none; }
 }
 
 /* =========================================================
    Hero
+   One orchestrated entrance on load — video, then headline,
+   then subtitle, then CTA. Nothing else on the page animates
+   on its own.
    ========================================================= */
 .hero {
   padding: 64px 0 56px;
@@ -164,6 +207,9 @@ p { line-height: 1.6; color: #333333; }
   margin-bottom: 36px;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: scale(1.02);
+  animation: hero-in 0.8s var(--ease) forwards;
 }
 
 .hero-video video {
@@ -192,10 +238,14 @@ p { line-height: 1.6; color: #333333; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   transform: translate(-50%, -50%);
   cursor: pointer;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition: opacity 0.15s ease, transform 0.2s var(--ease), box-shadow 0.2s ease;
 }
 
-.video-play:hover { transform: translate(-50%, -50%) scale(1.05); }
+.video-play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+.video-play:active { transform: translate(-50%, -50%) scale(0.96); }
 .video-play.is-hidden { opacity: 0; pointer-events: none; }
 
 .hero-body { max-width: 640px; }
@@ -203,12 +253,39 @@ p { line-height: 1.6; color: #333333; }
 .hero h1 {
   font-size: clamp(2.4rem, 5vw, 3.6rem);
   margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: hero-in 0.7s var(--ease) forwards;
+  animation-delay: 0.15s;
 }
 
 .hero .subtitle {
   font-size: 1.15rem;
   color: var(--gray);
   margin-bottom: 26px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: hero-in 0.7s var(--ease) forwards;
+  animation-delay: 0.28s;
+}
+
+.hero .btn-primary {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: hero-in 0.7s var(--ease) forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes hero-in {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video, .hero h1, .hero .subtitle, .hero .btn-primary {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .btn-primary {
@@ -221,11 +298,16 @@ p { line-height: 1.6; color: #333333; }
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition: background 0.2s ease, transform 0.15s var(--ease), box-shadow 0.2s ease;
 }
 
-.btn-primary:hover { background: #A8140B; color: var(--white); }
-.btn-primary:active { transform: scale(0.98); }
+.btn-primary:hover {
+  background: #A8140B;
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(209, 25, 13, 0.28);
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: scale(0.98) translateY(0); }
 
 /* =========================================================
    Red Hawks band
@@ -304,7 +386,7 @@ p { line-height: 1.6; color: #333333; }
 .carousel-slide {
   position: absolute;
   inset: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -313,9 +395,17 @@ p { line-height: 1.6; color: #333333; }
   color: #333333;
   text-align: center;
   padding: 24px;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  pointer-events: none;
 }
 
-.carousel-slide.active { display: flex; }
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
 
 .carousel-slide span {
   font-family: var(--font-body);
@@ -338,11 +428,12 @@ p { line-height: 1.6; color: #333333; }
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s var(--ease);
 }
 
 .carousel-btn.prev { left: 12px; }
 .carousel-btn.next { right: 12px; }
-.carousel-btn:hover { background: #D1190D; color: var(--white); }
+.carousel-btn:hover { background: #D1190D; color: var(--white); transform: translateY(-50%) scale(1.08); }
 
 .carousel-dots {
   position: absolute;
@@ -362,9 +453,10 @@ p { line-height: 1.6; color: #333333; }
   background: rgba(28,28,28,0.25);
   cursor: pointer;
   padding: 0;
+  transition: background 0.2s ease, transform 0.2s var(--ease);
 }
 
-.carousel-dots button.active { background: #333333; }
+.carousel-dots button.active { background: #333333; transform: scale(1.25); }
 
 @media (max-width: 800px) {
   .why-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -400,14 +492,39 @@ p { line-height: 1.6; color: #333333; }
   border-radius: 140px 140px 10px 10px;
   overflow: hidden;
   background: var(--white);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s ease;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(28,28,28,0.14);
+  border-color: #D1190D;
 }
 
 .spotlight-card .img-placeholder {
   aspect-ratio: 4 / 4;
-  border-bottom: 2px solid #333333;
+  position: relative;
+  overflow: hidden;
 }
 
-.spotlight-card .card-body { padding: 18px 20px 22px; }
+/* Melt the bottom of the image into the text panel below it */
+.spotlight-card .img-placeholder::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 58%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 55%, #ffffff 100%);
+  pointer-events: none;
+}
+
+.spotlight-card .card-body {
+  padding: 18px 20px 22px;
+  margin-top: -34px;
+  position: relative;
+  z-index: 1;
+}
 
 .spotlight-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
 
@@ -472,6 +589,12 @@ p { line-height: 1.6; color: #333333; }
   border-radius: 14px;
   padding: 28px 30px;
   margin-top: 34px;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s ease;
+}
+
+.contact-callout:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 26px rgba(209, 25, 13, 0.22);
 }
 
 .contact-callout p {
@@ -516,6 +639,12 @@ p { line-height: 1.6; color: #333333; }
   overflow: hidden;
   border: 2px solid #D1190D;
   background: var(--white);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.life-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(209, 25, 13, 0.2);
 }
 
 .life-card .img-placeholder {
@@ -586,8 +715,12 @@ p { line-height: 1.6; color: #333333; }
 
 .footer-col ul { list-style: none; margin: 0; padding: 0; }
 .footer-col li { margin-bottom: 8px; }
-.footer-col a { font-size: 0.9rem; color: rgba(255,255,255,0.88); }
-.footer-col a:hover { color: #D1190D; }
+.footer-col a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.88);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.footer-col a:hover { color: #ff6a5c; padding-left: 3px; }
 
 .footer-bottom {
   padding-top: 20px;
@@ -602,5 +735,5 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; scroll-behavior: auto !important; }
+  * { transition: none !important; scroll-behavior: auto !important; animation: none !important; }
 }
