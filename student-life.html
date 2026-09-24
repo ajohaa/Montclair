@@ -1,202 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <title>Student Life | Montclair State University</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <title>Student Life | Montclair State University</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar navbar-expand-lg">
-
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="index.html">
-                LOGO
-            </a>
-
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mainNav">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-
-            <div class="collapse navbar-collapse" id="mainNav">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Programs & Majors
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="admissions.html">
-                            Admissions & Aid
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="student-life.html">
-                            Student Life
-                        </a>
-                    </li>
-
+    <body>
+        <header class="site-header">
+            <nav class="nav">
+                <a href="index.html" class="nav-logo">
+                    <span class="mark" aria-hidden="true"></span>
+                    Montclair State
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Programs &amp; Majors</a></li>
+                    <li><a href="admissions.html">Admissions &amp; Aid</a></li>
+                    <li><a href="student-life.html" aria-current="page">Student Life</a></li>
                 </ul>
+            </nav>
+        </header>
 
+        <main>
+            <section class="student-life-hero">
+                <div class="wrap">
+                    <h1>Student Life</h1>
+                </div>
+            </section>
+
+            <hr class="section-rule" />
+
+            <div class="wrap">
+                <div class="caption-block">
+                    <p>College isn't just classes. Here's where you'll actually spend your time — from your dorm room to the sidelines of a Saturday game.</p>
+                </div>
+
+                <div class="life-grid">
+                    <article class="life-card">
+                        <div class="img-placeholder">img</div>
+                        <div class="card-body"><h3>Housing</h3></div>
+                    </article>
+                    <article class="life-card">
+                        <div class="img-placeholder">img</div>
+                        <div class="card-body"><h3>Clubs</h3></div>
+                    </article>
+                    <article class="life-card">
+                        <div class="img-placeholder">img</div>
+                        <div class="card-body"><h3>Athletics</h3></div>
+                    </article>
+                    <article class="life-card">
+                        <div class="img-placeholder">img</div>
+                        <div class="card-body"><h3>Facilities</h3></div>
+                    </article>
+                </div>
             </div>
+        </main>
 
-        </div>
-
-    </nav>
-
-
-    <!-- ==================== PAGE TITLE ==================== -->
-    <header class="page-header text-center">
-
-        <div class="container">
-
-            <h1>Student Life</h1>
-
-        </div>
-
-    </header>
-
-
-    <!-- ==================== INTRO ==================== -->
-    <section class="student-life-intro py-5">
-
-        <div class="container text-center">
-
-            <p class="lead">
-                Discover everything that makes life at Montclair State
-                more than just the classroom.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================== STUDENT LIFE CARDS ==================== -->
-    <section class="student-life-cards pb-5">
-
-        <div class="container">
-
-            <div class="row g-4">
-
-
-                <!-- HOUSING -->
-                <div class="col-md-6">
-
-                    <a href="#" class="life-card">
-
-                        <img src="images/housing.jpg"
-                             alt="Student housing">
-
-                        <div class="life-card-title">
-                            <h2>Housing</h2>
-                        </div>
-
-                    </a>
-
+        <footer class="site-footer">
+            <div class="wrap">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        Montclair State
+                        <p>A student-built guide to help incoming freshmen navigate campus, admissions, and life at MSU.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Programs &amp; Majors</a></li>
+                            <li><a href="admissions.html">Admissions &amp; Aid</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:admissions@montclair.edu">admissions@montclair.edu</a></li>
+                            <li><a href="tel:19736554200">(973) 655-4200</a></li>
+                        </ul>
+                    </div>
                 </div>
-
-
-                <!-- CLUBS -->
-                <div class="col-md-6">
-
-                    <a href="#" class="life-card">
-
-                        <img src="images/clubs.jpg"
-                             alt="Student clubs">
-
-                        <div class="life-card-title">
-                            <h2>Clubs</h2>
-                        </div>
-
-                    </a>
-
+                <div class="footer-bottom">
+                    This is an unofficial, student-made resource and is not affiliated with Montclair State University.
                 </div>
-
-
-                <!-- ATHLETICS -->
-                <div class="col-md-6">
-
-                    <a href="#" class="life-card">
-
-                        <img src="images/athletics.jpg"
-                             alt="Montclair State athletics">
-
-                        <div class="life-card-title">
-                            <h2>Athletics</h2>
-                        </div>
-
-                    </a>
-
-                </div>
-
-
-                <!-- FACILITIES -->
-                <div class="col-md-6">
-
-                    <a href="#" class="life-card">
-
-                        <img src="images/facilities.jpg"
-                             alt="Campus facilities">
-
-                        <div class="life-card-title">
-                            <h2>Facilities</h2>
-                        </div>
-
-                    </a>
-
-                </div>
-
-
             </div>
+        </footer>
 
-        </div>
-
-    </section>
-
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-
-        <div class="container">
-
-            <p>Montclair State University</p>
-            <p>Footer information goes here.</p>
-
-        </div>
-
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <script src="scripts.js"></script>
+    </body>
 </html>

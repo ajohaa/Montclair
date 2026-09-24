@@ -1,191 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <title>Admissions &amp; Aid | Montclair State University</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Admissions & Aid | Montclair State University</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar navbar-expand-lg">
-
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="index.html">
-                LOGO
-            </a>
-
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mainNav">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Programs & Majors
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="admissions.html">
-                            Admissions & Aid
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="student-life.html">
-                            Student Life
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-
-    <!-- ==================== PAGE TITLE ==================== -->
-    <header class="page-header text-center">
-
-        <div class="container">
-
-            <h1>Admissions & Aid</h1>
-
-        </div>
-
-    </header>
-
-
-    <!-- ==================== ADMISSIONS PROCESS ==================== -->
-    <section class="admissions-process py-5">
-
-        <div class="container">
-
-            <h2>Admissions Process</h2>
-
-            <div class="content-placeholder">
-
-                <p>
-                    Learn about the steps you need to take to become a
-                    Montclair State student.
-                </p>
-
-                <p>
-                    Add admissions requirements, important deadlines,
-                    application information, and other helpful information
-                    here.
-                </p>
-
-                <p>
-                    More admissions information can go here.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================== FINANCIAL AID ==================== -->
-    <section class="financial-aid py-5">
-
-        <div class="container">
-
-            <h2>Financial Aid Info</h2>
-
-            <div class="content-placeholder">
-
-                <p>
-                    Learn about scholarships, grants, financial aid,
-                    and other ways to help make college more affordable.
-                </p>
-
-                <p>
-                    Add FAFSA information and scholarship resources here.
-                </p>
-
-                <p>
-                    More financial aid information can go here.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================== CONTACT ==================== -->
-    <section class="contact-section">
-
-        <div class="container">
-
-            <div class="contact-box">
-
-                <h2>Have Questions?</h2>
-
-                <p>
-                    For more information, please contact the admissions
-                    office.
-                </p>
-
-                <p>
-                    Add contact information, email, phone number, or
-                    additional resources here.
-                </p>
-
-                <a href="#" class="btn btn-light">
-                    Contact Admissions
+    <body>
+        <header class="site-header">
+            <nav class="nav">
+                <a href="index.html" class="nav-logo">
+                    <span class="mark" aria-hidden="true"></span>
+                    Montclair State
                 </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Programs &amp; Majors</a></li>
+                    <li><a href="admissions.html" aria-current="page">Admissions &amp; Aid</a></li>
+                    <li><a href="student-life.html">Student Life</a></li>
+                </ul>
+            </nav>
+        </header>
 
+        <main>
+            <section class="page-hero">
+                <div class="wrap">
+                    <h1>Admissions &amp; Aid</h1>
+                </div>
+            </section>
+
+            <hr class="section-rule" />
+
+            <div class="wrap">
+                <section class="admissions-section">
+                    <h2>Admissions Process</h2>
+                    <p>Applications open August 1 and are reviewed on a rolling basis, so applying early gives you the best shot at your preferred housing and scholarships.</p>
+                    <p>You'll need your high school transcript, a personal essay, and one letter of recommendation. Standardized test scores are optional and won't count against you if you leave them out.</p>
+                    <p>Most freshmen hear back within four to six weeks. Admitted students get access to a portal for choosing housing, registering for orientation, and connecting with a peer mentor.</p>
+                    <p>Transfer and international students follow a slightly different checklist — your admissions counselor will confirm exactly what's needed once your application is started.</p>
+
+                    <h2>Financial Aid Info</h2>
+                    <p>File the FAFSA as soon as it opens in the fall — Montclair uses it to determine both need-based aid and most merit scholarships automatically.</p>
+                    <p>Roughly 80% of MSU freshmen receive some form of financial aid, whether that's grants, work-study, loans, or a scholarship tied to your major or GPA.</p>
+                    <p>Your award letter arrives alongside your admission decision, so you'll know your real cost before you have to commit to a deposit.</p>
+
+                    <div class="contact-callout">
+                        <p>For more information, please contact the Office of Admissions at <a href="mailto:admissions@montclair.edu">admissions@montclair.edu</a> or (973) 655-4200 — we're happy to walk through your specific situation.</p>
+                    </div>
+                </section>
             </div>
+        </main>
 
-        </div>
+        <footer class="site-footer">
+            <div class="wrap">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        Montclair State
+                        <p>A student-built guide to help incoming freshmen navigate campus, admissions, and life at MSU.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Programs &amp; Majors</a></li>
+                            <li><a href="admissions.html">Admissions &amp; Aid</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:admissions@montclair.edu">admissions@montclair.edu</a></li>
+                            <li><a href="tel:19736554200">(973) 655-4200</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    This is an unofficial, student-made resource and is not affiliated with Montclair State University.
+                </div>
+            </div>
+        </footer>
 
-    </section>
-
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-
-        <div class="container">
-
-            <p>Montclair State University</p>
-            <p>Footer information goes here.</p>
-
-        </div>
-
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <script src="scripts.js"></script>
+    </body>
 </html>
