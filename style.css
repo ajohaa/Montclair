@@ -378,13 +378,15 @@ p { line-height: 1.6; color: var(--ink); }
 .spotlight-pill {
   background: var(--red);
   color: var(--white);
-  display: inline-block;
+  display: block;
+  width: min(500px, 100%);
   padding: 12px 30px;
   border-radius: 999px;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.3rem;
-  margin-bottom: 34px;
+  margin: 0 auto 34px;
+  text-align: center;
 }
 
 .spotlight-grid {
@@ -395,13 +397,13 @@ p { line-height: 1.6; color: var(--ink); }
 
 .spotlight-card {
   border: 2px solid var(--ink);
-  border-radius: var(--arch);
+  border-radius: 140px 140px 10px 10px;
   overflow: hidden;
   background: var(--white);
 }
 
 .spotlight-card .img-placeholder {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 4;
   border-bottom: 2px solid var(--ink);
 }
 
@@ -416,7 +418,7 @@ p { line-height: 1.6; color: var(--ink); }
 }
 
 @media (max-width: 800px) {
-  .spotlight-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+  .spotlight-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
 }
 
 /* =========================================================
@@ -503,12 +505,14 @@ p { line-height: 1.6; color: var(--ink); }
 .life-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px;
+  gap: 38px;
+  max-width: 900px;
+  margin: 0 auto;
   padding-bottom: 64px;
 }
 
 .life-card {
-  border-radius: var(--arch);
+  border-radius: 20px;
   overflow: hidden;
   border: 2px solid var(--ink);
   background: var(--white);
@@ -526,8 +530,15 @@ p { line-height: 1.6; color: var(--ink); }
 
 .life-card h3 { font-size: 1.1rem; color: var(--white); }
 
+.life-card p {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 6px 0 0;
+}
+
 @media (max-width: 700px) {
-  .life-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .life-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
 }
 
 /* =========================================================
