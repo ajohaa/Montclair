@@ -9,3 +9,4 @@ I did the wireframe, but attached it there and had it recreate the structure
 asked the vscode assistant thing for help with the play button and video stuff because i couldnt figure it out
 I did my own research (most of it had already been done because I'm making a video in mr werntz class about montclair too)
 and just asked chatgpt to format it better for the site, also asked it for code organization / separating stuff by comments etc 
+Some of the content (like the carousel text) comes from Montclair's official site. Most images are also from there.

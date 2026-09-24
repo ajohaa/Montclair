@@ -19,7 +19,7 @@ if (heroVideo && videoPlay) {
   heroVideo.addEventListener("ended", () => videoPlay.classList.remove("is-hidden"));
 }
 
-// Simple "Why MSU" photo carousel (homepage only)
+// Simple "Why MSU" text carousel (homepage only)
 const carousel = document.getElementById("campusCarousel");
 
 if (carousel) {

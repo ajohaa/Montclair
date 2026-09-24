@@ -1,171 +1,248 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
-    <head>
-        <title>Montclair State University — A Freshman's Guide</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<head>
+    <title>Montclair State University — A Freshman's Guide</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- Bootstrap CSS v5.3.8 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="style.css" />
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
 
-    <body>
-        <header class="site-header">
-            <nav class="nav">
-                <a href="index.html" class="nav-logo">
-                    <img src="msu-logo.png" alt="" aria-hidden="true" />
-                </a>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="https://www.montclair.edu/academics/program-finder">Programs &amp; Majors</a></li>
-                    <li><a href="admissions.html">Admissions &amp; Aid</a></li>
-                    <li><a href="student-life.html">Student Life</a></li>
-                </ul>
-            </nav>
-        </header>
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+</head>
 
-        <main>
-            <!-- Hero -->
-            <section class="hero">
-                <div class="wrap">
-                    <div class="hero-video">
-                        <video playsinline preload="metadata">
-                            <source src="campustour.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                        <button class="video-play" type="button" aria-label="Play campus tour video">▶</button>
-                    </div>
-                    <div class="hero-body">
-                        <h1>Montclair State University</h1>
-                        <p class="subtitle">Your future starts here.</p>
-                        <a href="admissions.html" class="btn-primary">Apply Now</a>
-                    </div>
-                </div>
-            </section>
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo">
+                <img src="msu-logo.png" alt="" aria-hidden="true" />
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="https://www.montclair.edu/academics/program-finder">Programs &amp; Majors</a></li>
+                <li><a href="admissions.html">Admissions &amp; Aid</a></li>
+                <li><a href="student-life.html">Student Life</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <!-- Red Hawks band -->
-            <section class="hawk-band">
-                <div class="wrap">
-                    <img class="hawk-mark" src="redhawk.png" alt="" aria-hidden="true" />
-                    <div>
-                        <h2>Home of the Red Hawks</h2>
-                        <p>You're joining New Jersey's second-largest university — nineteen Division III teams, 300+ clubs, and a campus five minutes from NYC by train. Here's what that actually looks like day to day.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Why MSU -->
-            <section class="why-section">
-                <div class="wrap why-grid">
-                    <div>
-                        <h2>Why MSU?</h2>
-                        <p>A research university with a small-campus feel — 21,000 students, but classes taught by professors, not TAs.</p>
-                        <p>Sixteen miles from Manhattan, with a free shuttle to the PATH train for internships, shows, or just a Saturday out.</p>
-                        <p>Red Hawk Scholars, First-Year Seminars, and peer mentors mean you're never figuring it out alone.</p>
-                    </div>
-                    <div class="carousel-box" id="campusCarousel">
-                        <div class="carousel-slide active">
-                            <div>Red Hawk Stadium</div>
-                            <span>Photo 1 of 3</span>
-                        </div>
-                        <div class="carousel-slide">
-                            <div>Feliciano School of Business</div>
-                            <span>Photo 2 of 3</span>
-                        </div>
-                        <div class="carousel-slide">
-                            <div>Student Center Quad</div>
-                            <span>Photo 3 of 3</span>
-                        </div>
-                        <button class="carousel-btn prev" aria-label="Previous photo">‹</button>
-                        <button class="carousel-btn next" aria-label="Next photo">›</button>
-                        <div class="carousel-dots">
-                            <button class="active" aria-label="Slide 1"></button>
-                            <button aria-label="Slide 2"></button>
-                            <button aria-label="Slide 3"></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Program Spotlight -->
-            <section class="spotlight-section">
-                <div class="wrap">
-                    <div class="spotlight-pill">Program Spotlight</div>
-                    <div class="spotlight-grid">
-                        <article class="spotlight-card">
-                            <div class="img-placeholder">img</div>
-                            <div class="card-body">
-                                <h3>Computer Science</h3>
-                                <p>One of NJ's fastest-growing CS programs, with direct pipelines to NYC tech internships.</p>
-                            </div>
-                        </article>
-                        <article class="spotlight-card">
-                            <div class="img-placeholder">img</div>
-                            <div class="card-body">
-                                <h3>Nursing &amp; Health</h3>
-                                <p>Hands-on clinical training from year one in Montclair's dedicated simulation labs.</p>
-                            </div>
-                        </article>
-                        <article class="spotlight-card">
-                            <div class="img-placeholder">img</div>
-                            <div class="card-body">
-                                <h3>Film &amp; Television</h3>
-                                <p>Taught by working industry professionals, minutes from the New York production scene.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="site-footer" id="footer">
+    <main>
+        <!-- Hero -->
+        <section class="hero">
             <div class="wrap">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        Montclair State
-                        <p>A student-built guide to help incoming freshmen navigate campus, admissions, and life at MSU.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Explore</h4>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="https://www.montclair.edu/academics/program-finder">Programs &amp; Majors</a></li>
-                            <li><a href="admissions.html">Admissions &amp; Aid</a></li>
-                            <li><a href="student-life.html">Student Life</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><a href="mailto:admissions@montclair.edu">admissions@montclair.edu</a></li>
-                            <li><a href="tel:19736554200">(973) 655-4200</a></li>
-                        </ul>
-                    </div>
+                <div class="hero-video">
+                    <video playsinline preload="metadata">
+                        <source src="campustour.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="video-play" type="button" aria-label="Play campus tour video">▶</button>
                 </div>
-                <div class="footer-bottom">
-                    This is an unofficial, student-made resource and is not affiliated with Montclair State University.
+                <div class="hero-body">
+                    <h1>Montclair State University</h1>
+                    <p class="subtitle">Your future starts here.</p>
+                    <a href="admissions.html" class="btn-primary">Apply Now</a>
                 </div>
             </div>
-        </footer>
+        </section>
 
-        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"
-        ></script>
-        <script src="scripts.js"></script>
-    </body>
+        <!-- Red Hawks band -->
+        <section class="hawk-band">
+            <div class="wrap">
+                <img class="hawk-mark" src="redhawk.png" alt="" aria-hidden="true" />
+                <div>
+                    <h2>Home of the Red Hawks</h2>
+                    <p>You're joining New Jersey's second-largest university — nineteen Division III teams, 300+ clubs,
+                        and a campus five minutes from NYC by train. Here's what that actually looks like day to day.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why MSU -->
+        <section class="why-section">
+            <div class="wrap why-grid">
+                <div>
+                    <h2>Why MSU?</h2>
+                    <p>something something something
+                    </p>
+                </div>
+                <div class="carousel-box" id="campusCarousel">
+                    <div class="carousel-slide active">
+                        <h3>#1</h3>
+                        <span>Public University in New Jersey</span>
+                        <p>Ranked the No. 1 public institution in New Jersey in the Wall Street Journal/College Pulse
+                            2026 Best Colleges in the U.S. list.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>Top 30
+                        </h3>
+                        <span>Public in the Nation
+
+                        </span>
+                        <p>Ranked among the top 30 public institutions nationwide, underscoring the strength of our
+                            academics and outcomes.
+
+                        </p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>300+
+                        </h3>
+                        <span>Academic Programs</span>
+                        <p>At Montclair, you’ll have access to more than 300 academic majors, minors, concentrations and
+                            certificate programs.
+
+                        </p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>12 Miles
+                        </h3>
+                        <span>In the Big Apple’s Backyard
+
+                        </span>
+                        <p>The Montclair campus sits just 12 miles from Manhattan in the towns of Montclair, Clifton and
+                            Little Falls, New Jersey. Our Bloomfield campus is 14 miles from Midtown, giving you two
+                            areas with mass transit options that will take you to the heart of the city.
+
+                        </p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>252-Acre
+                        </h3>
+                        <span>Big Campus, Small Feel
+                        </span>
+                        <p>Sitting atop a hill overlooking the New York City skyline, Montclair’s 252-acre suburban
+                            campus gives you the resources of a large research university with a sense of belonging
+                            normally found at smaller schools. Our Bloomfield campus provides an even more intimate
+                            setting, giving you the best of both worlds.
+
+                        </p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>5
+                        </h3>
+                        <span>Top Graduate Programs
+                        </span>
+                        <p>Five of Montclair’s graduate programs in business, Education, Public Health, Audiology and
+                            Clinical Psychology were ranked by U.S. News & World Report in its 2026 Best Graduate
+                            Schools rankings.
+                        </p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>17-1
+                        </h3>
+                        <span>Small Class Sizes
+                        </span>
+                        <p>Our 17-1 student-to-teacher ratio makes the average class size at Montclair just 24 students.
+                            Your professors will know your name, and will push you to be your best while supporting you
+                            every step of the way.
+                        </p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>23
+                        </h3>
+                        <span>NCAA Division III and USCAA Athletics
+                        </span>
+                        <p>Our Montclair campus features 19 NCAA Division III Red Hawks athletics teams, while our
+                            Bloomfield campus features four USCAA intercollegiate athletics programs - giving you the
+                            chance to watch some of the top teams in the country throughout the year.
+                        </p>
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+                    <button class="carousel-btn next" aria-label="Next slide">›</button>
+                    <div class="carousel-dots">
+                        <button class="active" aria-label="Slide 1"></button>
+                        <button aria-label="Slide 2"></button>
+                        <button aria-label="Slide 3"></button>
+                        <button aria-label="Slide 4"></button>
+                        <button aria-label="Slide 5"></button>
+                        <button aria-label="Slide 6"></button>
+                        <button aria-label="Slide 7"></button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Spotlight -->
+        <section class="spotlight-section">
+            <div class="wrap">
+                <div class="spotlight-pill">Program Spotlight</div>
+                <div class="spotlight-grid">
+                    <article class="spotlight-card">
+                        <div class="img-placeholder"> <img src="compsci.jpeg" alt="Computer Science Program">
+                        </div>
+                        <div class="card-body">
+                            <h3>Computer Science</h3>
+                            <p>One of NJ's fastest-growing CS programs, with direct pipelines to NYC tech internships.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="spotlight-card">
+                        <div class="img-placeholder">
+                            <img src="nursing.jpeg" alt="Nursing & Health Program">
+                        </div>
+                        <div class="card-body">
+                            <h3>Nursing &amp; Health</h3>
+                            <p>Hands-on clinical training from year one in Montclair's dedicated simulation labs.</p>
+                        </div>
+                    </article>
+                    <article class="spotlight-card">
+                        <div class="img-placeholder"> <img src="film.jpeg" alt="Film & Television Program">
+                        </div>
+                        <div class="card-body">
+                            <h3>Film &amp; Television</h3>
+                            <p>Taught by working industry professionals, minutes from the New York production scene.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    Montclair State
+                    <p>A student-built guide to help incoming freshmen navigate campus, admissions, and life at MSU.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="https://www.montclair.edu/academics/program-finder">Programs &amp; Majors</a></li>
+                        <li><a href="admissions.html">Admissions &amp; Aid</a></li>
+                        <li><a href="student-life.html">Student Life</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:admissions@montclair.edu">admissions@montclair.edu</a></li>
+                        <li><a href="tel:19736554200">(973) 655-4200</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                This is an unofficial, student-made resource and is not affiliated with Montclair State University.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</body>
+
 </html>
