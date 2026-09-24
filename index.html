@@ -24,8 +24,7 @@
         <header class="site-header">
             <nav class="nav">
                 <a href="index.html" class="nav-logo">
-                    <span class="mark" aria-hidden="true"></span>
-                    Montclair State
+                    <img src="msu-logo.png" alt="" aria-hidden="true" />
                 </a>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
                 <ul class="nav-links" id="navLinks">
@@ -41,7 +40,13 @@
             <!-- Hero -->
             <section class="hero">
                 <div class="wrap">
-                    <div class="hero-video" role="img" aria-label="Campus welcome video placeholder">Campus welcome video</div>
+                    <div class="hero-video">
+                        <video playsinline preload="metadata">
+                            <source src="campustour.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="video-play" type="button" aria-label="Play campus tour video">▶</button>
+                    </div>
                     <div class="hero-body">
                         <h1>Montclair State University</h1>
                         <p class="subtitle">Your future starts here.</p>
@@ -53,9 +58,7 @@
             <!-- Red Hawks band -->
             <section class="hawk-band">
                 <div class="wrap">
-                    <svg class="hawk-mark" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M75 18 C95 30 132 42 138 70 C120 62 100 60 84 66 C100 78 112 96 112 118 C96 104 78 96 72 96 C66 96 48 104 32 118 C32 96 44 78 60 66 C44 60 24 62 6 70 C12 42 49 30 75 18 Z" fill="#ffffff" opacity="0.95"/>
-                    </svg>
+                    <img class="hawk-mark" src="redhawk.png" alt="" aria-hidden="true" />
                     <div>
                         <h2>Home of the Red Hawks</h2>
                         <p>You're joining New Jersey's second-largest university — nineteen Division III teams, 300+ clubs, and a campus five minutes from NYC by train. Here's what that actually looks like day to day.</p>

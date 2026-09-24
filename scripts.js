@@ -9,6 +9,16 @@ if (navToggle && navLinks) {
   });
 }
 
+const heroVideo = document.querySelector(".hero-video video");
+const videoPlay = document.querySelector(".video-play");
+
+if (heroVideo && videoPlay) {
+  videoPlay.addEventListener("click", () => heroVideo.play());
+  heroVideo.addEventListener("play", () => videoPlay.classList.add("is-hidden"));
+  heroVideo.addEventListener("pause", () => videoPlay.classList.remove("is-hidden"));
+  heroVideo.addEventListener("ended", () => videoPlay.classList.remove("is-hidden"));
+}
+
 // Simple "Why MSU" photo carousel (homepage only)
 const carousel = document.getElementById("campusCarousel");
 
